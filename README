@@ -1,0 +1,27 @@
+ Gestión de un  pedir comida rapida  Virtualmente (Comida_Rapida.cs)  
+
+ He montado la lógica  como funciona un sitio de comida rapida  virtualmente.
+Controla cosas reales de una app de comida: si el envío sale gratis por llegar al mínimo, si un cupón es válido, los suplementos y si la tienda está abierta según la hora.
+
+
+Es Clean Code  por tres motivos:
+
+ Cada función tiene una única tarea clara (una calcula el envío, otra el descuento, otra la hora). 
+
+Nombres identificativos
+codigo para que no fall, en la validación uso !string.IsNullOrEmpty.
+comprueba que el texto tenga letras de verdad y no esté guardado en blanco ni sea un nulo (null), evitando que el programa se rompa si el usuario no escribe nada.
+
+//Como lo he testeado 
+En el archivo MisTests.cs he creado 5 pruebas automaticas independientes usando xUnit. 
+
+ Cada prueba tiene al menos 3 líneas Assert para asegurar que el código no acierta de casualidad.
+
+ No solo pruebo que el programa funciona, también meto trampas  para ver que el código no se rompaq en el intento,
+pruebo qué pasa si meten un código de descuento falso ("CUPONFALSO"), si intentas pedir comida a las 4 de la mañana (con la tienda cerrada) o si el texto del pedido nos llega completamente vacío (null).
+
+
+Resultado de los tests:
+El proyecto compila perfecto al ejecutar el comando:
+bash
+dotnet test
