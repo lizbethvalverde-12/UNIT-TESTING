@@ -4,7 +4,7 @@ public class MisTests
 {
     private Comida_Rapida _comidaRapida = new Comida_Rapida();
 
-    // Test 1: Comprobar si el envío sale gratis (mínimo 15€)
+   [Fact] // Test 1: Comprobar si el envío sale gratis (mínimo 15€)
     public void Test_Envio_Gratis()
     {
         Assert.True(_comidaRapida.EnvioGratis(15.0));  
@@ -12,7 +12,7 @@ public class MisTests
         Assert.False(_comidaRapida.EnvioGratis(12.0)); 
     }
 
-     // Test 2: Comprobar el funcionamiento del cupón "PROFE10"
+    [Fact] // Test 2: Comprobar el funcionamiento del cupón "PROFE10"
     public void Test_Cupon_Descuento()
     {
         Assert.Equal(20, _comidaRapida.AplicarCupon(30, "PROFE10"));    
@@ -20,7 +20,7 @@ public class MisTests
         Assert.Equal(0, _comidaRapida.AplicarCupon(10, "PROFE10"));     
     }
 
-  // Test 3: Comprobar suplemento de queso extra (+1.50€)
+ [Fact] // Test 3: Comprobar suplemento de queso extra (+1.50€)
     public void Test_Precio_Queso_Extra()
     {
         Assert.Equal(11.50, _comidaRapida.ConQuesoExtra(10.0));
@@ -28,7 +28,7 @@ public class MisTests
         Assert.NotEqual(10.0, _comidaRapida.ConQuesoExtra(10.0));
     }
 
-// Test 4: Validar textos del estado del pedido
+[Fact] // Test 4: Validar textos del estado del pedido
     public void Test_Estado_Pedido()
     {
         Assert.True(_comidaRapida.EstadoValido("En cocina"));
@@ -36,7 +36,7 @@ public class MisTests
         Assert.False(_comidaRapida.EstadoValido(null)); 
     }
 
-// Test 5: Comprobar el horario de apertura (12h a 23h)
+[Fact] // Test 5: Comprobar el horario de apertura (12h a 23h)
     public void Test_Horario_Apertura()
     {
         Assert.True(_comidaRapida.EstaAbierto(14));  
