@@ -1,8 +1,7 @@
 ﻿using System;
 
-public class TelepizzaVirtual
+public class Comida_Rapida
 {
-
     public bool EnvioGratis(double total)
     {
         return total >= 15.0;
@@ -22,6 +21,7 @@ public class TelepizzaVirtual
     {
         return !string.IsNullOrEmpty(estado);
     }
+
     public bool EstaAbierto(int hora)
     {
         return hora >= 12 && hora <= 23;
